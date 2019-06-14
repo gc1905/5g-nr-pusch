@@ -17,6 +17,8 @@ If you find the content of this repository useful in your scientific research, p
 
 The fastest way to run the simulations is using a batch file *run_5g_nr_sim_sweep.m*. The user can edit the file manually and modify the simulation parameters accordingly. The link level simulation of PUSCH transmission with the main processing chain loop is implemented using *nr_sch_link_level_sim.m*. See the manual of the function for details.
 
+The 38.212 LDPC codec simulation without baseband processing part can be run with *run_5gnr_codec.m* batch file. 
+
 ## MEX acceleration
 
 Simulation time can be significantly reduced through acceleration with mex functions. In order to compile the mex function under MATLAB, execute the following commands from MATLAB command prompt with directory set to the repository's clone root:
