@@ -48,6 +48,7 @@ function [a, tb_crc_ok, cb_crc_ok] = nr_sch_decode(g, I_mcs, N_layers, rv_id, tb
   % Transport Block crc extraction and check
   p_ext = b(end-L+1:end);
   a = b(1:end-L);
+  a = a(:);
 
   if A > 3824
     p_calc = nr_38_212_crc_calc(a, '24A');

@@ -69,7 +69,7 @@ function res = nr_sch_link_level_sim(frame_cfg, sim_dur_slots, UE, N_ant_eNB_RX,
 
     % Transmitter
     for i = 1:length(UE)
-      UE(i).a = randi([0 1], [1 UE(i).tbs]);
+      UE(i).a = randi([0 1], [UE(i).tbs 1]);
       UE(i).g = nr_sch_encode(UE(i).a, UE(i).I_mcs, UE(i).N_layer, 0, UE(i).ctbs, UE(i).higher_layer_parameters.MCS_Table_PUSCH);
       x_tx = nr_pusch_transmit(UE(i).g, UE(i).Q_m, UE(i).N_layer, frame_cfg, n_slot_frame, UE(i).PUSCH_symbol_start, UE(i).PUSCH_sched_RB_offset, UE(i).PUSCH_sched_RB_num, UE(i).antenna_ports, UE(i).higher_layer_parameters, 0, 0);
       UE(i).y_tx = nr_ofdma_modulator(x_tx, frame_cfg, n_slot_frame);

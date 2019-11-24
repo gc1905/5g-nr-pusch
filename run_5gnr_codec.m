@@ -18,7 +18,7 @@ blocks_tx  = 0;
 blocks_err = 0;
 
 for it = 1 : ITERS
-  a = randi([0 1], [1 tbs]);
+  a = randi([0 1], [tbs 1]);
   g = nr_sch_encode(a, I_mcs, N_layers, rv_id, ctbs);
 
   d = modulation_mapper(g, Q_m);

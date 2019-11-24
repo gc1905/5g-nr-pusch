@@ -46,4 +46,5 @@ function [g] = nr_sch_encode(a, I_mcs, N_layers, rv_id, ctbs, mcs_tbl)
   g = nr_38_212_rate_matching_ldpc(d, base_graph, N_layers, Q_m, rv_id, ctbs);
 
   g(g == -1) = 0;
+  g = g(:);
 end

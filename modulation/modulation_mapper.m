@@ -36,9 +36,7 @@ function [iq] = modulation_mapper(x, Q_m)
     end
   end
   
-  sz = size(x);
-  sz(1) = sz(1) / Q_m;
-  iq = zeros(sz);
+  iq = zeros(numel(x)/Q_m,1);
 
   for idx = 1 : numel(iq)
     tidx = 0;
