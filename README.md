@@ -9,7 +9,7 @@ Note that not all the configurations specified by the standard are supported. Im
 * Transform precoding not supported,
 * LBRM Rate Matching not supported.
 
-If you find the content of this repository useful in your scientific research, please consider including the following reference in your references:
+If you find the content of this repository useful in your scientific research, please consider including the following conference paper in your references:
 
 > G. Cisek and T. Zielinski, "Prototyping Software Transceiver for the 5G New Radio Physical Uplink Shared Channel," in *Signal Processing Symposium (SPSympo)*, Cracow, Poland, September 2019.
 
