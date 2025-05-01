@@ -41,7 +41,7 @@ function p = nr_38_212_crc_calc(b, crc_gen)
   end
 
   lfsr = zeros(1,length(crc_poly));
-  b_ext = [b, zeros(1,length(crc_poly)-1)];
+  b_ext = [b(:); zeros(length(crc_poly)-1,1)];
 
   for n = 1:length(b_ext)
     lfsr = [lfsr(2:end) b_ext(n)];
