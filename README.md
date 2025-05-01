@@ -19,6 +19,8 @@ The fastest way to run the simulations is using a batch file *run_5g_nr_sim_swee
 
 The 38.212 LDPC codec simulation without baseband processing part can be run with *run_5gnr_codec.m* batch file. 
 
+Please note that all subfolders of this repository must be included in the MATLAB or Octave PATH in order to run any simulations. This can be handled by `addpath(genpath(dir))`.
+
 ## MEX acceleration
 
 Simulation time can be significantly reduced through acceleration with mex functions. In order to compile the mex function under MATLAB, execute the following commands from MATLAB command prompt with directory set to the repository's clone root:
