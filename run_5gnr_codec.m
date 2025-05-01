@@ -8,7 +8,7 @@ I_mcs = 1;
 rv_id = 0;
 % % % %
 
-N0 = 10.0 ^ (-SNR / 20.0);
+N0 = 10.0 ^ (-SNR / 10.0);
 Q_m = nr_resolve_mcs(I_mcs, 1);
 [tbs, ctbs] = nr_transport_block_size(N_symbols, 0, N_prb, I_mcs, N_layers);
 
@@ -22,7 +22,7 @@ for it = 1 : ITERS
   g = nr_sch_encode(a, I_mcs, N_layers, rv_id, ctbs);
 
   d = modulation_mapper(g, Q_m);
-  d_noisy = d + N0 / sqrt(2) * (randn(size(d)) + 1i * randn(size(d)));
+  d_noisy = d + sqrt(N0 / 2) * complex(randn(size(d)), randn(size(d)));
 
   LLR = modulation_demapper_soft(d_noisy, Q_m, 'Approx LLR', N0);
   [a_rx, tb_crc_ok, cb_crc_ok] = nr_sch_decode(LLR, I_mcs, N_layers, rv_id, tbs);
