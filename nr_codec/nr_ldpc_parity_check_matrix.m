@@ -20,7 +20,7 @@ function H = nr_ldpc_parity_check_matrix(base_graph, Z_c)
       if z == Z_c
         i_LS = i_LS_i;
         break;
-      end 
+      end
     end
   end
 
@@ -38,10 +38,11 @@ function H = nr_ldpc_parity_check_matrix(base_graph, Z_c)
 
   for it = 0 : max(i)
     idx = find(i == it);
-    for jt = idx
+    for jt = idx(:)'
       row_idx = it*Z_c+1:(it+1)*Z_c;
       col_idx = j(jt)*Z_c+1:(j(jt)+1)*Z_c;
-      H(row_idx,col_idx) = circshift(eye(Z_c), [0 (-mod(V_i_j(jt),Z_c))]);
+      shift = mod(V_i_j(jt),Z_c);
+      H(row_idx,col_idx) = circshift(eye(Z_c), [0 shift]);
     end
   end
 end
