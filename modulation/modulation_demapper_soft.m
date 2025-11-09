@@ -15,6 +15,8 @@
 %           2 - QPSK
 %           4 - 16QAM
 %           6 - 64QAM
+%           8 - 256QAM
+%          10 - 1024QAM
 %
 %  method - soft-demodulation algorithm selection:
 %           'True LLR'   - true LLR using LOGMAP
